@@ -138,4 +138,36 @@ for (var i = 0; i < numArry.length; i++) {
   console.log(i);
 }
 
-// mapを使った処理
+// map,filterを使った処理
+const nameArr = ["tanaka", "suzuki", "suslily"];
+// // 従来のfor分での処理
+// for(var i = 0; i< nameArr.length; i++){
+//   console.log(nameArr[i]);
+// }
+// // mapを使った上記の処理方法
+// const nameArry2 = nameArr.map((name) =>{
+//   return name;
+// })
+// console.log(nameArry2);
+
+nameArr.map((name) => console.log(name));
+
+const numArry2 = [1, 2, 3, 4, 5];
+const newnumArry2 = numArry2.filter((num) => {
+  return num % 2 === 1;
+});
+console.log(newnumArry2);
+
+// mapの中で配列の順番を取りたい時は引数を二つ使う
+nameArr.map((name, index) => console.log(`${index + 1}番目は${name}さんです`));
+
+// mapを使った条件処理
+// やりたいこと:suslilだけ　さん　をつける
+const newNameArry = nameArr.map((name) => {
+  if (name === "suslily") {
+    return `${name}さん`;
+  } else {
+    return name;
+  }
+});
+console.log(newNameArry);
